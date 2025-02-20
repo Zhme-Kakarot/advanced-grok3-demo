@@ -1,0 +1,16 @@
+# Ignore compiled executables
+assignment*
+!*.cpp  # Keep source files
+
+# Ignore other common executables
+*.out
+a.out  # Default output from g++ without -o
+
+# Ignore object files and temporary files
+*.o
+*.obj
+*~
+
+# Ignore build directories (if you add them later)
+build/
+bin/
