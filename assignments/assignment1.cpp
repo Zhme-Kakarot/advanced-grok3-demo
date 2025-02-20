@@ -10,11 +10,13 @@
 
 template <unsigned int N>
 struct Factorial {
+    // Recursive factorial at compile-time
     static constexpr unsigned int value = N * Factorial<N - 1>::value;
 };
 
 template <>
 struct Factorial<0> {
+    // Base case of Factorial<0> = 1 to stop recursion
     static constexpr unsigned int value = 1;
 };
 
