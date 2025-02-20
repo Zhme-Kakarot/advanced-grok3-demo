@@ -1,5 +1,3 @@
-
-
 #include <iostream>
 #include <memory>
 #include <vector>
@@ -10,14 +8,17 @@
 #include <concepts>
 
 // Compile-time power calculation with concepts
-template <std::integral T, T Base, T Exp>
+template <typename T, T Base, T Exp>
+requires std::integral<T>
 struct Power {
     static_assert(Exp >= 0, "Negative exponents not supported");
-    static constexpr T value = Base * Power<Base, Exp - 1>::value;
+    static constexpr T value = Base * Power<T, Base, Exp - 1>::value;
 };
 
-template <std::integral T, T Base>
-struct Power<Base, T, 0> {
+// Case of Exp = 0
+template <typename T, T Base, T Exp>
+requires std::integral<T> && (Exp == 0)
+struct Power<T, Base, Exp> {
     static constexpr T value = 1;
 };
 
@@ -31,15 +32,15 @@ void parallelTransform(std::vector<T>& vec) {
                    [](T n) { return n * 2; });
 }
 
-// Sum with constraints
-template <std::integral T>
+// Sum with constraints (generalized for any numeric type)
+template <typename T>
 T computeSum(const std::vector<T>& vec) {
     return std::reduce(std::execution::par, vec.begin(), vec.end(), T{0});
 }
 
 int main() {
     // Smart pointer with compile-time computation
-    auto ptr = std::make_unique<long long>(Power<2, 3>::value); // 2^3 = 8
+    auto ptr = std::make_unique<long long>(Power<long long, 2, 3>::value); // 2^3 = 8
     std::cout << "2^3: " << *ptr << std::endl;
 
     // Parallel transformation and range-based output

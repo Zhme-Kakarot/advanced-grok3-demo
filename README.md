@@ -3,8 +3,6 @@
     Grok (xAI): For designing the curriculum and demo code.
     Community: For inspiration and future feedback.
 
-Follow my progress here as I work toward mastering advanced C++!
-
 ---
 
 # Advanced C++ Study with Grok
@@ -25,13 +23,15 @@ This repository tracks my journey to master advanced C++ concepts, guided by Gro
 
 ## Target Demo
 The file `demo.cpp` contains the "extremely advanced" C++ program I’m working toward. It integrates:
-- Compile-time power calculation with templates.
+- Compile-time power calculation with templates and `requires` clauses.
 - C++20 concepts for type safety.
 - Parallel execution with `std::execution::par`.
 - Modern ranges with `std::views::enumerate`.
 - Smart pointers for resource management.
 
-Run it with a C++23-compatible compiler (e.g., GCC 14, Clang 17) using `-std=c++23 -ltbb` (for parallel execution).
+Run it with a C++23-compatible compiler (e.g., GCC 14, Clang 17) using `-std=c++23 -ltbb`.
+
+**Latest Update**: Modified `Power` to use `requires` syntax and generalized `computeSum` for numeric types (Feb 20, 2025).
 
 ---
 
@@ -100,14 +100,14 @@ These trivial assignments provide a starting point for each concept. I’ll add 
 ## Setup Instructions
 1. **Create the Repository**:
    - On GitHub, click "New Repository," name it (e.g., `cpp-advanced-study`), and initialize with a README.
-   - Clone it locally: `git clone <repo-url>`.
+   - Clone it locally: `git clone https://github.com/Zhme-Kakarot/cpp-advanced-study.git`.
 
 2. **Add Files**:
    - Copy this `README.md` and `demo.cpp` into the repo folder.
    - Commit and push:
      ```bash
      git add README.md demo.cpp
-     git commit -m "Initial commit with curriculum and demo"
+     git commit -m "Initial commit with updated curriculum and demo"
      git push origin main
      ```
 
