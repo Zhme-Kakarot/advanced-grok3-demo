@@ -1,10 +1,11 @@
 #include <iostream>
 #include <concepts>
 
-
+// Concept to constrain to numeric operations
 template <typename T>
 concept Numeric = requires(T a, T b) { a * b; a + b; };
 
+// Constrain T in expression
 template <Numeric T>
 void printProduct(const T& a, const T& b) {
     std::cout << a << " * " << b << " = " << (a * b) << std::endl;
