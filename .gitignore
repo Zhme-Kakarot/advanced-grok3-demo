@@ -1,9 +1,5 @@
-<<<<<<< HEAD
 assignment[0-9]
 assignment[0-9][0-9]
-=======
-assignment*
->>>>>>> fb1a6731b254bcd36e396524f5df5f58244ae432
 !*.cpp
 *.out
 a.out
@@ -12,8 +8,4 @@ a.out
 *~
 build/
 bin/
-<<<<<<< HEAD
 .vscode/
-=======
-.vscode/
->>>>>>> fb1a6731b254bcd36e396524f5df5f58244ae432
